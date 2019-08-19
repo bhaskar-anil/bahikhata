@@ -1,0 +1,20 @@
+{
+	"userId" : 1,
+	"taskerId" : 1,
+	"addressId" : 1,
+	"cartId" : 1,
+	"orderAt" : "2019-01-01 10:10",
+	"dueAt" : "2019-01-01 10:10",
+	"items" : [
+		{
+			"priceId" : 1,
+			"quantity" : 1,
+			"discountId" : 1
+		},
+		{
+			"priceId" : 2,
+			"quantity" : 1,
+			"discountId" : 1
+		}
+	]
+}

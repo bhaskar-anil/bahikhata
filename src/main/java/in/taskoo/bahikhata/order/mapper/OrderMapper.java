@@ -24,7 +24,6 @@ public class OrderMapper {
         List<OrderItem> items = new ArrayList<>();
         for(OrderItemDTO dto : itemDTOs) {
             items.add(OrderItem.builder()
-            .orderId(dto.getOrderId())
             .priceId(dto.getPriceId())
             .quantity(dto.getQuantity())
             .discountId(dto.getDiscountId())

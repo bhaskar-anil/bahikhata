@@ -18,6 +18,4 @@ public class OrderDTO {
     private String oderAt;
     private String dueAt;
     private List<OrderItemDTO> items;
-    private Double totalAmount;
-    private Double payableAmount;
 }

@@ -1,5 +1,7 @@
 package in.taskoo.bahikhata.order.dto;
 
+import javax.validation.constraints.Positive;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -8,8 +10,8 @@ import lombok.Data;
 @Builder
 @AllArgsConstructor
 public class OrderItemDTO {
-    private Long orderId;
     private Long priceId;
+    @Positive
     private Integer quantity;
     private Long discountId; 
 }
