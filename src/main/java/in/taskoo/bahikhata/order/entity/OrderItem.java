@@ -1,17 +1,20 @@
 package in.taskoo.bahikhata.order.entity;
 
 import javax.persistence.Entity;
+import javax.validation.Valid;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 
-@Entity
+@Valid
 @Data
+@Builder
 @AllArgsConstructor
-public class OrderDetail {
+@Entity
+public class OrderItem {
     private Long orderId;
     private Long priceId;
-    private Long discountId;
     private Integer quantity;
-    private String orderDevice;
+    private Long discountId;    
 }

@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: bahikhata
+  profiles:
+    active: local
+  jpa:
+    show_sql: true
+    hibernate:
+      ddl-auto: none
+  datasource:
+    url: jdbc:mysql://localhost:3306/taskoo
+    username: root
+    password: 
