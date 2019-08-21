@@ -9,9 +9,12 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+import javax.persistence.Table;
 
+import in.taskoo.bahikhata.cart.entity.Cart;
 import in.taskoo.bahikhata.order.constant.OrderStatus;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -21,6 +24,7 @@ import lombok.Data;
 @Data
 @Builder
 @AllArgsConstructor
+@Table(name = "taskoo_order")
 public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -35,17 +39,18 @@ public class Order {
     @Column(name = "address_id")
     private Long addressId;
 
-    @OneToOne(mappedBy = "cart", cascade = CascadeType.ALL)
-    private Long cartId;
+    @OneToOne
+    @JoinColumn(name = "cart_id", referencedColumnName = "id")
+    private Cart cart;
 
     @Column(name = "status")
     @Builder.Default
     private final OrderStatus status = OrderStatus.CREATED;
 
     @Column(name = "order_at")
-    private LocalDateTime oderAt;
+    private LocalDateTime orderAt;
 
-    @Column(name = "order_at")
+    @Column(name = "due_at")
     private LocalDateTime dueAt;
 
     @Column(name = "total_amount")
